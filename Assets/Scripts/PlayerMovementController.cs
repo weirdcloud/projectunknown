@@ -28,15 +28,18 @@ public class PlayerMovementController : MonoBehaviour
     float horizontal;
     float currentVerticalSpeed = 0f;
     int currentDoubleJumpCount;
+    Animator animator;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         currentDoubleJumpCount = maxDoubleJumpCount;
     }
 
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        SetAnimatorVariables();
 
         if (IsGrounded())
         {
@@ -91,5 +94,20 @@ public class PlayerMovementController : MonoBehaviour
     bool IsTouchingCeiling()
     {
         return ceilCheck.GetIsTouchingCeiling();
+    }
+
+    void SetAnimatorVariables()
+    {
+        animator.SetInteger("horizontal", (int)horizontal);
+        animator.SetBool("isGrounded", IsGrounded());
+        if (!IsGrounded())
+        {
+            if (currentVerticalSpeed > 0)
+                animator.SetInteger("vertical", 1);
+            else if (currentVerticalSpeed < 0)
+                animator.SetInteger("vertical", -1);
+        }
+        else
+            animator.SetInteger("vertical", 0);
     }
 }
