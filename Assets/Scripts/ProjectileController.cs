@@ -5,14 +5,28 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField]
+    PowerUps activePowerUps;
+    [SerializeField]
     int damage = 1;
+
+    public int Damage 
+    { 
+        get
+        {
+            if (activePowerUps.doubleDamage)
+                return damage * 2;
+            else
+                return damage;
+        }
+        set => damage = value; 
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IHealthController health = collision.GetComponent<IHealthController>();
         if (health != null)
         {
-            health.TakeDamage(damage);
+            health.TakeDamage(Damage);
         }
         Destroy(gameObject);
     }

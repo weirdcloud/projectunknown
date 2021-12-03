@@ -5,17 +5,30 @@ using UnityEngine;
 public class PlayerAttackController : MonoBehaviour
 {
     [SerializeField]
+    PowerUps activePowerUps;
+    [SerializeField]
     GameObject projectile;
     [SerializeField]
     float cooldown = 0.5f;
 
     float timeSinceShot = 0f;
 
+    public float Cooldown 
+    {
+        get
+        {
+            if (activePowerUps.quickRecharge)
+                return 0.5f * cooldown;
+            else
+                return cooldown;
+        }
+        set => cooldown = value; }
+
     void Update()
     {
         timeSinceShot += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && (timeSinceShot >= cooldown))
+        if (Input.GetMouseButtonDown(0) && (timeSinceShot >= Cooldown))
         {
             Shoot();
             timeSinceShot = 0f;

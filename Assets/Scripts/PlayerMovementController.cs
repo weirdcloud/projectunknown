@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField]
+    PowerUps activePowerUps;
+
+    [SerializeField]
     private Rigidbody2D rb2d;
     [SerializeField]
     private GroundCheck groundCheck;
@@ -33,10 +36,21 @@ public class PlayerMovementController : MonoBehaviour
     int currentDoubleJumpCount;
     Animator animator;
 
+    public int MaxDoubleJumpCount 
+    { 
+        get
+        {
+            if (activePowerUps.tripleJump)
+                return 2;
+            else return maxDoubleJumpCount;
+        }
+        set => maxDoubleJumpCount = value; 
+    }
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        currentDoubleJumpCount = maxDoubleJumpCount;
+        currentDoubleJumpCount = MaxDoubleJumpCount;
     }
 
     private void Update()
@@ -46,7 +60,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (IsGrounded())
         {
-            currentDoubleJumpCount = maxDoubleJumpCount;
+            currentDoubleJumpCount = MaxDoubleJumpCount;
         }
 
         if (Input.GetButtonDown("Jump"))

@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1d3c73afb92214eaadbe3acc5e6cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activePowerUps: {fileID: 11400000, guid: 49c1a8a1182681e4094659a78b066ab4, type: 2}
   rb2d: {fileID: 4138759847220895864}
   groundCheck: {fileID: 4138759846577515398}
   ceilCheck: {fileID: 4138759848614695682}
@@ -309,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abe99d9f3b55c349a7bbff5aec54f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activePowerUps: {fileID: 11400000, guid: 49c1a8a1182681e4094659a78b066ab4, type: 2}
   projectile: {fileID: 6245933372402000429, guid: 2c2ab4e753df8ba428f0225d30fadd37, type: 3}
   cooldown: 0.5
 --- !u!114 &4138759847220896133
