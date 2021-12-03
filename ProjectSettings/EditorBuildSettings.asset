@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2e1110bbe2a4564498bf24c7bf296559
   - enabled: 1
+    path: Assets/Scenes/AltarRoom.unity
+    guid: 3e2e5782f76cf9942892489f571a5f19
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
