@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3686806433147796988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1991907112132919386}
+  - component: {fileID: 3536823558512970223}
+  m_Layer: 3
+  m_Name: DoubleJumpEffectSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1991907112132919386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686806433147796988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4138759847220895866}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3536823558512970223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686806433147796988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2658f3b7492bbad42ad686cdad89e673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 534392018376376750, guid: 31146946f188b6e4b91c4c3c651a7481, type: 3}
 --- !u!1 &4138759846577515129
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +89,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0}
+  m_Offset: {x: -0.033464193, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +100,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4125842, y: 0.02}
+  m_Size: {x: 0.43738794, y: 0.02}
   m_EdgeRadius: 0
 --- !u!114 &4138759846577515398
 MonoBehaviour:
@@ -106,6 +150,7 @@ Transform:
   m_Children:
   - {fileID: 4138759846577515128}
   - {fileID: 4138759848614695684}
+  - {fileID: 1991907112132919386}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -235,8 +280,23 @@ MonoBehaviour:
   maxVerticalSpeed: 4.5
   gravity: 17
   jumpDownScale: 2
-  jumpHeight: 2.7
+  jumpHeight: 3
   maxDoubleJumpCount: 1
+  DoubleJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3536823558512970223}
+        m_TargetAssemblyTypeName: FXDoubleJump, Assembly-CSharp
+        m_MethodName: OnDoubleJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4138759847220896135
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerMovementController : MonoBehaviour
 
     [SerializeField]
     private int maxDoubleJumpCount = 1;
+
+    public UnityEvent DoubleJump;
 
     float horizontal;
     float currentVerticalSpeed = 0f;
@@ -56,6 +59,7 @@ public class PlayerMovementController : MonoBehaviour
             {
                 currentVerticalSpeed = Mathf.Sqrt(-2 * -gravity * jumpHeight);
                 currentDoubleJumpCount--;
+                DoubleJump.Invoke();
             }
         }
     }
