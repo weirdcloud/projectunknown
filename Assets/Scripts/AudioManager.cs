@@ -101,12 +101,18 @@ public class AudioManager : MonoBehaviour
         yield return null;
     }
 
+    public IEnumerator Pause(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
     public void StartFadeOut(string sound)
     {
         StartCoroutine(FadeOut(sound, 2f));
     }
     public void StartFadeIn(string sound)
     {
+        StartCoroutine(Pause(2f));
         StartCoroutine(FadeIn(sound, 15f));
     }
 }
