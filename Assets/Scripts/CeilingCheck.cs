@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CeilingCheck : MonoBehaviour
 {
-    private bool isTouchingCeiling = false;
+    public BoolEvent changeCeiling;
+
+    private void Start()
+    {
+        changeCeiling.Invoke(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isTouchingCeiling = true;
+        changeCeiling.Invoke(true);
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isTouchingCeiling = false;
-    }
-
-    public bool GetIsTouchingCeiling()
-    {
-        return isTouchingCeiling;
+        changeCeiling.Invoke(false);
     }
 }

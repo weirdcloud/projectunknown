@@ -31,6 +31,9 @@ public class PlayerMovementController : MonoBehaviour
 
     public UnityEvent DoubleJump;
 
+    bool isGrounded = false;
+    bool isTouchingCeiling = false;
+
     float horizontal;
     float currentVerticalSpeed = 0f;
     int currentDoubleJumpCount;
@@ -51,6 +54,9 @@ public class PlayerMovementController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         currentDoubleJumpCount = MaxDoubleJumpCount;
+
+        ceilCheck.changeCeiling.AddListener(OnChangeCeiling);
+        groundCheck.changeGrounded.AddListener(OnChangeGrounded);
     }
 
     private void Update()
@@ -104,14 +110,24 @@ public class PlayerMovementController : MonoBehaviour
         rb2d.MovePosition(rb2d.position + new Vector2(horizontalPos, verticalPos));
     }
 
+    public void OnChangeGrounded(bool value)
+    {
+        isGrounded = value;
+    }
+
+    public void OnChangeCeiling(bool value)
+    {
+        isTouchingCeiling = value;
+    }
+
     bool IsGrounded()
     {
-        return groundCheck.GetIsGrounded();
+        return isGrounded;
     }
 
     bool IsTouchingCeiling()
     {
-        return ceilCheck.GetIsTouchingCeiling();
+        return isTouchingCeiling;
     }
 
     void SetAnimatorVariables()

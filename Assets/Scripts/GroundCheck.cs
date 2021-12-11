@@ -1,22 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class BoolEvent : UnityEvent<bool>
+{
+}
 
 public class GroundCheck : MonoBehaviour
-{
-    private bool grounded = false;
+{    
+    public BoolEvent changeGrounded;
+    private void Start()
+    {
+        changeGrounded.Invoke(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        grounded = true;
+        changeGrounded.Invoke(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        grounded = false;
+        changeGrounded.Invoke(false);
     }
 
-    public bool GetIsGrounded()
-    {
-        return grounded;
-    }
 }
