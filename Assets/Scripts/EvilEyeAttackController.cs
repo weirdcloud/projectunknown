@@ -33,7 +33,8 @@ public class EvilEyeAttackController : MonoBehaviour
     {
         Vector3 targetPos = target.transform.position;
         Vector3 aimDirection = targetPos - transform.position;
-        GameObject projInstance = Instantiate<GameObject>(projectile, transform.position, Quaternion.identity);
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        GameObject projInstance = Instantiate<GameObject>(projectile, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
         projInstance.GetComponent<Rigidbody2D>().AddForce(((Vector2)aimDirection).normalized * 10, ForceMode2D.Impulse);
     }
 }
