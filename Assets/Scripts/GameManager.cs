@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour
     public UnityEvent LvlFail;
     public UnityEvent LvlWin;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         PlayerHealthController player = FindObjectOfType<PlayerHealthController>();
         player.playerDeath.AddListener(OnPlayerDeath);
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void OnPlayerDeath()
@@ -48,5 +51,10 @@ public class GameManager : MonoBehaviour
     public void DeletePowerUps()
     {
         activePowerUps.DisableAll();
+    }
+
+    public void FadeOutMusic()
+    {
+        audioManager.StartFadeOut("GameMusic");
     }
 }

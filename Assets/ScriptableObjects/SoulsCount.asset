@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed6ccad3108dad46960122094287d44, type: 3}
   m_Name: SoulsCount
   m_EditorClassIdentifier: 
-  soulsAmount: 2
+  soulsAmount: 12
   heldSoulsAmount: 0
   changeSoulsAmount:
     m_PersistentCalls:

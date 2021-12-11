@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4138759847220896134}
   - component: {fileID: 4138759847220896135}
   - component: {fileID: 4138759847220896133}
+  - component: {fileID: -4332645672426026617}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -301,6 +302,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -4332645672426026617}
+        m_TargetAssemblyTypeName: PlayerSoundController, Assembly-CSharp
+        m_MethodName: PlayDoubleJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Jump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4332645672426026617}
+        m_TargetAssemblyTypeName: PlayerSoundController, Assembly-CSharp
+        m_MethodName: PlayJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4138759847220896135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +363,33 @@ MonoBehaviour:
   playerDeath:
     m_PersistentCalls:
       m_Calls: []
+  playerDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4332645672426026617}
+        m_TargetAssemblyTypeName: PlayerSoundController, Assembly-CSharp
+        m_MethodName: PlayTakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-4332645672426026617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138759847220895867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1ce862f66f9114dacca76c4720bae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4138759848614695685
 GameObject:
   m_ObjectHideFlags: 0

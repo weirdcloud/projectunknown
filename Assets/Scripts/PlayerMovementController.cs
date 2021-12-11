@@ -30,6 +30,7 @@ public class PlayerMovementController : MonoBehaviour
     private int maxDoubleJumpCount = 1;
 
     public UnityEvent DoubleJump;
+    public UnityEvent Jump;
 
     bool isGrounded = false;
     bool isTouchingCeiling = false;
@@ -74,6 +75,7 @@ public class PlayerMovementController : MonoBehaviour
             if (IsGrounded())
             {
                 currentVerticalSpeed = Mathf.Sqrt(-2 * -gravity * jumpHeight);
+                Jump.Invoke();
             }
             else if (currentDoubleJumpCount > 0)
             {

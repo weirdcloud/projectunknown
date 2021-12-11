@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8203324917887321050}
   - component: {fileID: 8203324917887321049}
   - component: {fileID: 8203324917887321053}
+  - component: {fileID: 4443119962819809412}
   m_Layer: 7
   m_Name: EvilEye
   m_TagString: Untagged
@@ -86,6 +87,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currencyCount: {fileID: 11400000, guid: 24b890e74d63546429cb117feeac6252, type: 2}
   hitPoints: 2
+  damaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4443119962819809412}
+        m_TargetAssemblyTypeName: EvilEyeSoundController, Assembly-CSharp
+        m_MethodName: PlayDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8203324917887321053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +116,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1247202769491101755, guid: e58fcf4e0bad92a4889c210200dd7d07, type: 3}
   cooldown: 1
+--- !u!114 &4443119962819809412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203324917887321048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55faa51392c72ba4da3b70c9790da249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8203324917972088487
 GameObject:
   m_ObjectHideFlags: 0
