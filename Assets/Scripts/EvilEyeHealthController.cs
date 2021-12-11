@@ -17,7 +17,7 @@ public class EvilEyeHealthController : MonoBehaviour, IHealthController
     public void TakeDamage(int damage)
     {
         damaged.Invoke();
-        if (hitPoints - 1 <= 0)
+        if (hitPoints - damage <= 0)
         {
             Die();
         } 
