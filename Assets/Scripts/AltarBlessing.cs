@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AltarBlessing : MonoBehaviour
 {
@@ -11,18 +12,23 @@ public class AltarBlessing : MonoBehaviour
     [SerializeField]
     int price = 10;
 
+    public BoolEvent GotBlessing;
+
     public void buyPowerUp()
     {
         if (currencyCount.SoulsAmount >= price)
         {
             currencyCount.SoulsAmount -= price;
             enableRandomPowerUp();
+            GotBlessing.Invoke(true);
         }
+        else
+            GotBlessing.Invoke(false);
     }
 
     void enableRandomPowerUp()
     {
-        int random = Random.Range(0, 2);
+        int random = Random.Range(1, 4);
         switch(random)
         {
             case 1:

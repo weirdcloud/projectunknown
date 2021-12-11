@@ -13,6 +13,7 @@ public class PlayerProjectileController : MonoBehaviour
     { 
         get
         {
+            print(activePowerUps.doubleDamage);
             if (activePowerUps.doubleDamage)
                 return damage * 2;
             else

@@ -23,7 +23,7 @@ public class EvilEyeHealthController : MonoBehaviour, IHealthController
         } 
         else
         {
-            hitPoints--;
+            hitPoints -= damage;
         }
     }
 
