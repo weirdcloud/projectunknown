@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class BoolEvent : UnityEvent<bool>
-{
-}
-
 public class GroundCheck : MonoBehaviour
 {    
     public BoolEvent changeGrounded;
