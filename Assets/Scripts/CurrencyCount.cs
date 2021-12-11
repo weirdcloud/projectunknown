@@ -1,13 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class CurrencyCount : ScriptableObject
 {
+    [SerializeField]
     private int soulsAmount = 0;
-    private int levelSoulsAmount = 0;
+    [SerializeField]
+    private int heldSoulsAmount = 0;
 
-    public int SoulsAmount { get => soulsAmount; set => soulsAmount = value; }
-    public int LevelSoulsAmount { get => levelSoulsAmount; set => levelSoulsAmount = value; }
+    public IntEvent changeSoulsAmount;
+    public IntEvent changeHeldSoulsAmount;
+
+    public int SoulsAmount 
+    { 
+        get => soulsAmount; 
+        set 
+        {
+            soulsAmount = value;
+            changeSoulsAmount.Invoke(soulsAmount);
+        }
+    }
+    public int HeldSoulsAmount 
+    { 
+        get => heldSoulsAmount;
+        set
+        {
+            heldSoulsAmount = value;
+            changeHeldSoulsAmount.Invoke(heldSoulsAmount);
+        }
+    }
 }

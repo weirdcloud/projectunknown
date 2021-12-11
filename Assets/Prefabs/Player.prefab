@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b150f4385116bf45b0a192b3c2ad96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeGrounded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4138759847220895867
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +329,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 5
+  changeHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4138759848614695685
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,3 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fedff86d5848ab46930411c64467bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeCeiling:
+    m_PersistentCalls:
+      m_Calls: []

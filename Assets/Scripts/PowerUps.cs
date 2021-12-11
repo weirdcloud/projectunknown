@@ -8,4 +8,11 @@ public class PowerUps : ScriptableObject
     public bool doubleDamage;
     public bool quickRecharge;
     public bool tripleJump;
+
+    public void DisableAll()
+    {
+        doubleDamage = false;
+        quickRecharge = false;
+        tripleJump = false;
+    }
 }

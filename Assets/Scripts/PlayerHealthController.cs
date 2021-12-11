@@ -10,6 +10,10 @@ public class PlayerHealthController : MonoBehaviour, IHealthController
 
     public IntEvent changeHealth;
     public UnityEvent playerDeath;
+    void Start()
+    {
+        changeHealth.Invoke(hitPoints);
+    }
 
     public void TakeDamage(int damage)
     {
