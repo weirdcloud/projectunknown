@@ -13,9 +13,9 @@ public class AltarBlessing : MonoBehaviour
 
     public void buyPowerUp()
     {
-        if (currencyCount.soulsAmount >= price)
+        if (currencyCount.SoulsAmount >= price)
         {
-            currencyCount.soulsAmount -= price;
+            currencyCount.SoulsAmount -= price;
             enableRandomPowerUp();
         }
     }

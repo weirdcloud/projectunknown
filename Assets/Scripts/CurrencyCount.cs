@@ -5,5 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class CurrencyCount : ScriptableObject
 {
-    public int soulsAmount = 0;
+    private int soulsAmount = 0;
+    private int levelSoulsAmount = 0;
+
+    public int SoulsAmount { get => soulsAmount; set => soulsAmount = value; }
+    public int LevelSoulsAmount { get => levelSoulsAmount; set => levelSoulsAmount = value; }
 }
