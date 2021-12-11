@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void OnEnterPortal()
     {
+        SaveHeldSouls();
         GameObject player = FindObjectOfType<PlayerHealthController>().gameObject;
         Destroy(player);
         LvlWin.Invoke();
