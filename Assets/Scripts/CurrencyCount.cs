@@ -32,4 +32,9 @@ public class CurrencyCount : ScriptableObject
             changeHeldSoulsAmount.Invoke(heldSoulsAmount);
         }
     }
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }

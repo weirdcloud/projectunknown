@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ActivePowerUps
   m_EditorClassIdentifier: 
   doubleDamage: 0
-  quickRecharge: 1
+  quickRecharge: 0
   tripleJump: 0

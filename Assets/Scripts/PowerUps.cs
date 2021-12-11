@@ -15,4 +15,9 @@ public class PowerUps : ScriptableObject
         quickRecharge = false;
         tripleJump = false;
     }
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }
